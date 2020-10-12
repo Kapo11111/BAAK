@@ -26,6 +26,7 @@
             height: 93px;
             border-radius: 100%;
             background: url(./ball.png) no-repeat center center;
+            z-index: 1;
         }
 
         .wrap {
@@ -203,7 +204,7 @@
 
 </body>
 
-
+<!-- BAAKlogo -->
 <div style="float: left;
             width: 100%;
             margin: 0 0 30px 0px;
@@ -223,7 +224,7 @@
     </div>
 
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
-
+<!-- OUREXPERTISES_BUTTON -->
     <div style="float: left;
             width: 100%;
             margin: 0 0 30px 0px;
@@ -235,11 +236,36 @@
 
         <div style="color:rgb(34, 34, 34); 
             font-size: 20px; font-family: 'Source Sans Pro', sans-serif; letter-spacing: 4px; 
-            margin: 500px 0px 10px 1000px;">
+            margin: 484px 0px 10px 1000px;">
 
 
-            <body>OUR EXPERTISES
-            </body>
+            <a href="https://kaipo0602.wixsite.com/baak"style="color:black; text-decoration:none" >OUR EXPERTISES
+            </a>
         </div>
 
+        <div class="elementToFadeInAndOut">
+
+ <img src="img/pushout.jpg"
+ style=" position: absolute;
+ top: 650px;
+ right: 1025px;
+ max-width: 13%; height: auto;">
+
+ </div>
+
+ 
 </html>
+
+<style>
+.elementToFadeInAndOut {
+    opacity: 0;
+    animation: fade 7s linear;
+}
+
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+</style>
+
