@@ -10,16 +10,16 @@
             margin: 0;
             padding: 0;
         }
-        
+
         .shell {
             position: relative;
             top: 300px;
             left: 48%;
             width: 100px;
             height: 100px;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0);
         }
-        
+
         .ball {
             position: absolute;
             width: 93px;
@@ -27,13 +27,14 @@
             border-radius: 100%;
             background: url(./ball.png) no-repeat center center;
         }
-        
+
         .wrap {
             display: none;
         }
     </style>
     <script src="./jquery.min.js"></script>
 </head>
+
 
 <body>
     <div class="wrap"></div>
@@ -57,7 +58,7 @@
         var x = 0;
         var y = 0;
         // 鼠标移动事件
-        shell.addEventListener('mousemove', function(e) {
+        shell.addEventListener('mousemove', function (e) {
             directionMouse();
 
             var direction = wrap.innerText;
@@ -114,11 +115,11 @@
 
 
         // 判断鼠标从那侧进入
-        var directionMouse = function() {
+        var directionMouse = function () {
             var ret;
             var shell = document.querySelector('.shell');
             var wrap = document.querySelector('.wrap');
-            var hoverDir = function(e) {
+            var hoverDir = function (e) {
                 var w = shell.offsetWidth,
                     h = shell.offsetHeight,
                     x = (e.clientX - shell.offsetLeft - (w / 2)) * (w > h ? (h / w) : 1),
@@ -152,7 +153,7 @@
 
             // 先清除以前的定时器，只保留当前的一个定时器执行
             clearInterval(obj.timer);
-            obj.timer = setInterval(function() {
+            obj.timer = setInterval(function () {
                 // 步长值写到定时器的里面
                 // 把我们步长值改为整数 不要出现小数的问题
                 var step = (target - obj.offsetLeft) / 10;
@@ -178,7 +179,7 @@
 
             // 先清除以前的定时器，只保留当前的一个定时器执行
             clearInterval(obj.timer);
-            obj.timer = setInterval(function() {
+            obj.timer = setInterval(function () {
                 // 步长值写到定时器的里面
                 // 把我们步长值改为整数 不要出现小数的问题
                 var step = (target - obj.offsetTop) / 10;
@@ -201,5 +202,44 @@
     </script>
 
 </body>
+
+
+<div style="float: left;
+            width: 100%;
+            margin: 0 0 30px 0px;
+            padding: 10px;
+                background:#FFFFFF;
+                /*border: 1px solid #666666;*/
+            border-radius: 3px; 
+            -webkit-border-radius: 3px;">
+
+    <div style="color:rgb(34, 34, 34); 
+            font-size: 20px; font-family: 'JoJo', cursive;
+            margin: 0px 0px 10px 200px;">
+
+
+        <body>BAAK
+        </body>
+    </div>
+
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,200&display=swap" rel="stylesheet">
+
+    <div style="float: left;
+            width: 100%;
+            margin: 0 0 30px 0px;
+            padding: 10px;
+                background:#FFFFFF;
+                /*border: 1px solid #666666;*/
+            border-radius: 3px; 
+            -webkit-border-radius: 3px;">
+
+        <div style="color:rgb(34, 34, 34); 
+            font-size: 20px; font-family: 'Source Sans Pro', sans-serif; letter-spacing: 4px; 
+            margin: 500px 0px 10px 1000px;">
+
+
+            <body>OUR EXPERTISES
+            </body>
+        </div>
 
 </html>
