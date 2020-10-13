@@ -243,29 +243,53 @@
             </a>
         </div>
 
-        <div class="elementToFadeInAndOut">
 
- <img src="img/pushout.jpg"
- style=" position: absolute;
- top: 650px;
- right: 1025px;
- max-width: 13%; height: auto;">
-
- </div>
+        <div id="cf">
+            <img class="bottom" src="img/w1.jpg" />
+            <img class="top" src="img/w2.jpg" />
+          </div>
 
  
 </html>
 
 <style>
-.elementToFadeInAndOut {
-    opacity: 0;
-    animation: fade 7s linear;
+#cf {
+  position:relative;
+  height:281px;
+  width:450px;
+  margin:0 auto;
 }
 
-@keyframes fade {
-  0%,100% { opacity: 0 }
-  50% { opacity: 1 }
+#cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes cf3FadeInOut {
+  0% {
+  opacity:1;
+}
+45% {
+opacity:1;
+}
+55% {
+opacity:0;
+}
+100% {
+opacity:0;
+}
+}
+
+#cf3 img.top {
+animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 5s;
+animation-direction: alternate;
 }
 
 </style>
-
