@@ -245,19 +245,20 @@
 
 
         <div id="cf">
-            <img class="bottom" src="img/w1.jpg" />
-            <img class="top" src="img/w2.jpg" />
+            <img class="bottom" src="img/w2.jpg" style="max-width: 47%; height: auto;"/>
+            <img class="top" src="img/w1.jpg" style="max-width: 47%; height: auto;"/>
           </div>
 
  
 </html>
 
 <style>
+
 #cf {
-  position:relative;
+  position:absolute;
   height:281px;
   width:450px;
-  margin:0 auto;
+  margin: -26px 0px 0px 200px;
 }
 
 #cf img {
@@ -267,6 +268,14 @@
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
+}
+
+#cf img.top {
+    animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 7s;
+animation-direction: alternate;
 }
 
 @keyframes cf3FadeInOut {
@@ -284,12 +293,5 @@ opacity:0;
 }
 }
 
-#cf3 img.top {
-animation-name: cf3FadeInOut;
-animation-timing-function: ease-in-out;
-animation-iteration-count: infinite;
-animation-duration: 5s;
-animation-direction: alternate;
-}
 
 </style>
