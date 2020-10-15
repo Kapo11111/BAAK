@@ -43,22 +43,22 @@
         <div class="ball"> </div>
     </div>
     <script>
-        // 浏览器显示页面的宽高
+        // Size browser display page
         var width = document.documentElement.clientWidth;
         var height = document.documentElement.clientHeight;
 
-        // 小球移动的范围
+        // Range of ball movement
         var width_max = width - 93;
         var height_max = height - 93;
         console.log("width_max = " + width_max);
         console.log("height_max = " + height_max);
 
-        // 获取小球
+        // Gain black dot
         var shell = document.querySelector(".shell");
         var wrap = document.querySelector('.wrap');
         var x = 0;
         var y = 0;
-        // 鼠标移动事件
+        // Cursor movement
         shell.addEventListener('mousemove', function (e) {
             directionMouse();
 
@@ -88,25 +88,25 @@
                 shell.style.left = width_max + 'px';
             }
 
-            // 小球反弹 向右
+            // Dot bounces in right
             if (e.pageX < 5) {
 
                 var x = e.pageX + Math.ceil(Math.random() * 1000);
                 animate_x(shell, x);
             }
 
-            // 小球反弹 向左
+            // Dot bounces in left
             if (e.pageX > width_max) {
                 var x = e.pageX - Math.ceil(Math.random(300) * 1000);
                 animate_x(shell, x);
 
             }
-            // 小球反弹 向下
+            // Dot bounces in bottom
             if (e.pageY < 5) {
                 var y = e.pageY + Math.ceil(Math.random(200) * 500);
                 animate_y(shell, y);
             }
-            // 小球反弹 向上
+            // Dot bounces in top
             if (e.pageY > height_max - 10) {
                 var y = e.pageY - Math.ceil(Math.random(200) * 500);
                 animate_y(shell, y);
@@ -115,7 +115,7 @@
         });
 
 
-        // 判断鼠标从那侧进入
+        // Determine from which side the cursor enters
         var directionMouse = function () {
             var ret;
             var shell = document.querySelector('.shell');
@@ -150,52 +150,52 @@
         }
 
         function animate_x(obj, target, callback) {
-            // console.log(callback);  callback = function() {}  调用的时候 callback()
+            // console.log(callback);  callback = function() {}  調用的時候 callback()
 
-            // 先清除以前的定时器，只保留当前的一个定时器执行
+            // 先清除以前的定時器，只保留當前的一個定時器執行
             clearInterval(obj.timer);
             obj.timer = setInterval(function () {
-                // 步长值写到定时器的里面
-                // 把我们步长值改为整数 不要出现小数的问题
+                // 步長值寫到定時器的裡面
+                // 把我們步長值改為整數 不要出現小數的問題
                 var step = (target - obj.offsetLeft) / 10;
                 step = step > 0 ? Math.ceil(step) : Math.floor(step);
                 if (obj.offsetLeft == target) {
-                    // 停止动画 本质是停止定时器
+                    // 停止動畫 本質是停止定時器
                     clearInterval(obj.timer);
-                    // 回调函数写到定时器结束里面
+                    // 回調函數寫到定時器結束裡面
                     // if (callback) {
-                    //     // 调用函数
+                    //     // 調用函數
                     //     callback();
                     // }
-                    callback && callback(); // 与上面等价
+                    callback && callback(); // 與上面等價
                 }
-                // 把每次加1 这个步长值改为一个慢慢变小的值  步长公式：(目标值 - 现在的位置) / 10
+                // 把每次加1 這個步長值改為一個慢慢變小的值 步長公式：(目標值 - 現在的位置) / 10
                 obj.style.left = obj.offsetLeft + step + 'px';
 
             }, 15);
         }
 
         function animate_y(obj, target, callback) {
-            // console.log(callback);  callback = function() {}  调用的时候 callback()
+            // console.log(callback);  callback = function() {}  調用的時候 callback()
 
-            // 先清除以前的定时器，只保留当前的一个定时器执行
+            // 先清除以前的定時器，只保留當前的一個定時器執行
             clearInterval(obj.timer);
             obj.timer = setInterval(function () {
-                // 步长值写到定时器的里面
-                // 把我们步长值改为整数 不要出现小数的问题
+                // 步長值寫到定時器的里面
+                // 把我們步長值改為整數 不要出現小數的問題
                 var step = (target - obj.offsetTop) / 10;
                 step = step > 0 ? Math.ceil(step) : Math.floor(step);
                 if (obj.offsetTop == target) {
-                    // 停止动画 本质是停止定时器
+                    // 停止動畫 本質是停止定時器
                     clearInterval(obj.timer);
-                    // 回调函数写到定时器结束里面
+                    // 回調函數寫到定時器結束裡面
                     // if (callback) {
-                    //     // 调用函数
+                    //     // 調用函數
                     //     callback();
                     // }
-                    callback && callback(); // 与上面等价
+                    callback && callback(); // 與上面等價
                 }
-                // 把每次加1 这个步长值改为一个慢慢变小的值  步长公式：(目标值 - 现在的位置) / 10
+                // 把每次加1 這個步長值改為一個慢慢變小的值 步長公式：(目標值 - 現在的位置) / 10
                 obj.style.top = obj.offsetTop + step + 'px';
 
             }, 15);
